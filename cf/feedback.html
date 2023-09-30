@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Contact Form #6</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              
+              <h3 class="heading mb-4">Let's get some more improvement !</h3>
+              <p>We will be very happy if you will find our mistakes, because mistakes are the steps to success !</p>
+
+              <p><img src="images/undraw-contact.svg" alt="Image" class="img-fluid"></p>
+
+
+            </div>
+            <div class="col-md-6">
+              
+              <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Feedback Topic">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Write Your Golden Feedback"></textarea>
+                  </div>
+                </div>  
+                <div class="row">
+                  <div class="col-12">
+                    <input type="submit" value="Let's Improve" class="btn btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+
+              <div id="form-message-warning mt-4"></div> 
+              <div id="form-message-success">
+                Your message was sent, thank you!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+
+        function Send(){
+
+          
+           var name = document.getElementById("Name").value;
+           var email = document.getElementById("Email").value;
+           var contact = document.getElementById("Contact").value;
+           var sub = document.getElementById("subject").value;
+           var mess = document.getElementById("message").value;
+
+           var body = "Name: " + name + "<br/> Email:" + email + "<br/> Contact Number:" + contact + "<br/> Message:" + mess;
+            
+           console.log(body);
+           
+            Email.send({
+             SecureToken : "bbf47c28-cf90-4676-b709-8883d35206f0",
+             To : 'mrajaysingh8957@gmail.com',
+             From : "mrajaysingh8957@gmail.com",
+             Subject : sub,
+             Body : body
+            }).then(
+                message =>{
+                    if(message=='OK'){
+
+                        swal("Successfull", "Your Request has been sent SUCCESSFULLY.", "success");
+                    }
+                    else{
+
+                        swal("Something Wrong", "Please Recheck Your Filled Data.", "error");
+                    }
+                }
+              );
+
+            
+        
+        }
+
+       
+
+    </script>
+
+
+
+
+
+
+
+  </body>
+</html>
